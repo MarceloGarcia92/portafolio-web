@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Marcelo García C. — AI Architect & Engineer · Physical AI</title>
-<meta name="description" content="AI Architect & Engineer. Sistemas GenAI y agénticos (RAG, multiagente, MCP), Machine Learning, Computer Vision y MLOps en producción. CTO de ITMeet SpA (AgroTech), investigación doctoral en IA agéntica para Agro 5.0.">
+<meta name="description" content="AI Architect & Engineer. GenAI and agentic systems (RAG, multi-agent, MCP), Machine Learning, Computer Vision and MLOps in production. CTO of ITMeet, doctoral research in agentic AI for Agro 5.0.">
 <style>
   :root{
     --bg:#0d1117; --panel:#131a22; --panel-2:#182029;
@@ -26,10 +26,16 @@
   nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
   nav .brand{font-weight:700;letter-spacing:.3px}
   nav .brand span{color:var(--accent)}
+  nav .nav-right{display:flex;align-items:center;gap:22px}
   nav ul{display:flex;gap:22px;list-style:none;font-size:14px}
   nav ul a{color:var(--muted);transition:color .2s}
   nav ul a:hover{color:var(--ink)}
   @media(max-width:820px){nav ul{display:none}}
+
+  /* language toggle */
+  .lang-toggle{display:inline-flex;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:4px;cursor:pointer;font-family:inherit;flex:none}
+  .lang-toggle span{font-size:12px;font-weight:600;color:var(--muted);padding:3px 11px;border-radius:999px;transition:color .2s,background .2s;line-height:1}
+  .lang-toggle span.active{color:#08130f;background:var(--accent)}
 
   /* hero */
   header{padding:92px 0 60px;position:relative;overflow:hidden}
@@ -146,70 +152,75 @@
 
 <nav><div class="wrap">
   <div class="brand">Marcelo García<span>.</span></div>
-  <ul>
-    <li><a href="#about">Perfil</a></li>
-    <li><a href="#expertise">Expertise</a></li>
-    <li><a href="#experience">Experiencia</a></li>
-    <li><a href="#projects">Proyectos</a></li>
-    <li><a href="#rd">I+D</a></li>
-    <li><a href="#research">Investigación</a></li>
-    <li><a href="#contact">Contacto</a></li>
-  </ul>
+  <div class="nav-right">
+    <ul>
+      <li><a href="#about" data-i18n="nav.about">Profile</a></li>
+      <li><a href="#expertise" data-i18n="nav.expertise">Expertise</a></li>
+      <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+      <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+      <!-- <li><a href="#rd" data-i18n="nav.rd">R&amp;D</a></li> -->
+      <li><a href="#research" data-i18n="nav.research">Research</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+    </ul>
+    <button id="langToggle" class="lang-toggle" type="button" aria-label="Language / Idioma">
+      <span data-lang="en">EN</span><span data-lang="es">ES</span>
+    </button>
+  </div>
 </div></nav>
 
 <header><div class="wrap">
-  <div class="eyebrow">AI Architect & Engineer · Physical AI · MLOps</div>
-  <h1>Diseño y construyo sistemas de IA que <em>llegan a producción</em> — del modelo al mundo físico.</h1>
-  <p class="lead">Arquitecto e ingeniero de IA con 8+ años en banca, petróleo & gas y agricultura de precisión. Fundador y CTO de <strong style="color:#e8edf2">ITMeet SpA</strong> (AgroTech, Chile). Construyo sistemas <strong style="color:#e8edf2">GenAI y agénticos</strong>, ML y visión por computador, y los llevo a producción con la disciplina de ingeniería que suelen faltarles. Hoy avanzo hacia la <strong style="color:#e8edf2">IA física y los gemelos digitales</strong>.</p>
+  <div class="eyebrow">AI Architect &amp; Engineer · Physical AI · MLOps</div>
+  <h1 data-i18n="hero.h1">I design and build AI systems that <em>reach production</em> — from the model to the physical world.</h1>
+  <p class="lead" data-i18n="hero.lead">AI architect and engineer with 8+ years across banking, oil &amp; gas and precision agriculture. Founder and CTO of <strong style="color:#e8edf2">ITMeet</strong>. I build <strong style="color:#e8edf2">GenAI and agentic systems</strong>, ML and computer vision, and take them to production with the engineering discipline they usually lack. Today I'm moving toward <strong style="color:#e8edf2">physical AI and digital twins</strong>.</p>
   <div class="cta">
-    <a class="btn primary" href="#projects">Ver trabajo ↓</a>
+    <a class="btn primary" href="#projects" data-i18n="cta.work">See work ↓</a>
     <a class="btn ghost" href="https://github.com/MarceloGarcia92" target="_blank" rel="noopener">GitHub</a>
     <a class="btn ghost" href="https://www.linkedin.com/in/marcelo-garcia-c/" target="_blank" rel="noopener">LinkedIn</a>
   </div>
   <div class="tags">
-    <span class="tag">GenAI & IA Agéntica</span>
-    <span class="tag">RAG · Multiagente · MCP</span>
-    <span class="tag">Computer Vision</span>
-    <span class="tag">MLOps</span>
-    <span class="tag">Arquitectura Cloud</span>
-    <span class="tag">AgroTech · Physical AI</span>
+    <span class="tag" data-i18n="tag.1">GenAI &amp; Agentic AI</span>
+    <span class="tag" data-i18n="tag.2">RAG · Multi-agent · MCP</span>
+    <span class="tag" data-i18n="tag.3">Computer Vision</span>
+    <span class="tag" data-i18n="tag.4">MLOps</span>
+    <span class="tag" data-i18n="tag.5">Cloud Architecture</span>
+    <span class="tag" data-i18n="tag.6">AgroTech · Physical AI</span>
   </div>
 </div></header>
 
 <section id="about" class="about"><div class="wrap">
-  <div class="sec-label">Perfil</div>
-  <h2>De la métrica de negocio al sistema en producción</h2>
-  <p>Mi base es Ingeniería Civil Industrial más un Magíster en Control de Gestión: aprendí primero el <strong>ROI y el criterio de negocio</strong>, y después bajé por la escalera técnica — científico de datos, ingeniero de datos, arquitecto de datos e IA. Ese recorrido me dio algo poco común: diseño la arquitectura <em>y</em> escribo el código que corre en producción, así que una sola persona acota el problema, construye la solución y la mantiene confiable y económica cuando llegan usuarios reales.</p>
-  <p>No convierto cada problema en un LLM. Uso ML tradicional cuando es la herramienta correcta y escalo la autonomía (agentes) solo cuando un diseño más simple demuestra que no alcanza. Cada recomendación viene con su trade-off y su consideración de costo.</p>
-  <p>Hoy dirijo <strong>ITMeet SpA</strong> y avanzo hacia la <strong>IA física y los gemelos digitales</strong>: la percepción y la orquestación de agentes como puente entre el dato y la acción en el mundo real — con una línea de <a href="#research" class="accent">investigación doctoral</a> que formaliza ese cruce en agricultura (Agro 5.0).</p>
+  <div class="sec-label" data-i18n="about.label">Profile</div>
+  <h2 data-i18n="about.h2">From business metric to production system</h2>
+  <p data-i18n="about.p1">My foundation is Industrial Civil Engineering plus a Master's in Management Control: I first learned <strong>ROI and business judgment</strong>, then I delved into technical execution. — data scientist, data engineer, data and AI architect. That path gave me something uncommon: I design the architecture and write production-ready code, ensuring the solution is robust, cost-effective, and scale-ready for real users.</p>
+  <p data-i18n="about.p2">I don't turn every problem into an LLM. I use traditional ML when it's the right tool and scale autonomy (agents) only when a simpler design proves insufficient. Every recommendation comes with its trade-off and its cost consideration.</p>
+  <p data-i18n="about.p3">Today I bridge strategic vision with technical execution <strong>ITMeet</strong> and move toward <strong>physical AI and digital twins</strong>: perception and agent orchestration as the bridge between data and action in the real world — with a line of <a href="#research" class="accent">doctoral research</a> that formalizes that crossover in agriculture (Agro 5.0).</p>
 </div></section>
 
 <section id="expertise"><div class="wrap">
-  <div class="sec-label">Expertise</div>
-  <h2>Áreas de especialización</h2>
+  <div class="sec-label" data-i18n="expertise.label">Expertise</div>
+  <h2 data-i18n="expertise.h2">Areas of specialization</h2>
   <div class="exp-grid">
 
     <div class="exp">
-      <h3><span class="dot"></span>GenAI & IA Agéntica</h3>
-      <p>RAG sobre documentos (ingesta y consulta, búsqueda híbrida, reranking, control de acceso por metadatos) con evaluación real (RAGAS + revisión humana). Sistemas agénticos con function calling, orquestación multiagente y MCP, con los guardrails que producción sí necesita: permisos de mínimo privilegio, validación E/S, topes de iteración y presupuesto, y trazabilidad completa.</p>
-      <div class="tools"><span>LangChain</span><span>LangGraph</span><span>MCP</span><span>RAGAS</span><span>Langfuse / LangSmith</span><span>Qdrant</span><span>pgvector</span></div>
+      <h3><span class="dot"></span><span data-i18n="exp1.h3">GenAI &amp; Agentic AI</span></h3>
+      <p data-i18n="exp1.p">RAG over documents (ingestion and querying, hybrid search, reranking, metadata-based access control) with real evaluation (RAGAS + human review). Agentic systems with function calling, multi-agent orchestration and MCP, with the guardrails production actually needs: least-privilege permissions, I/O validation, iteration and budget caps, and full traceability.</p>
+      <div class="tools"><span>LangChain</span><span>LangGraph</span><span>MCP</span><span>RAGAS</span><span>Langfuse / LangSmith</span><span>Qdrant</span></div>
     </div>
 
     <div class="exp">
-      <h3><span class="dot"></span>Machine Learning & Computer Vision</h3>
-      <p>Clasificación sobre datos desbalanceados (SMOTE), visión por computador (CNN, transfer learning, estimación de pose), validación rigurosa y monitoreo de drift. Modelos en producción con precisión por encima del 90%, evaluados con métricas honestas (precision/recall, AUC, matriz de confusión) — no solo accuracy.</p>
+      <h3><span class="dot"></span><span data-i18n="exp2.h3">Machine Learning &amp; Computer Vision</span></h3>
+      <p data-i18n="exp2.p">Classification on imbalanced data (SMOTE), computer vision (CNN, transfer learning, pose estimation), rigorous validation and drift monitoring. Models in production with accuracy above 90%, evaluated with honest metrics (precision/recall, AUC, confusion matrix) — not just accuracy.</p>
       <div class="tools"><span>TensorFlow</span><span>PyTorch</span><span>Keras</span><span>scikit-learn</span><span>OpenCV</span><span>MediaPipe</span></div>
     </div>
 
     <div class="exp">
-      <h3><span class="dot"></span>MLOps & Data Engineering</h3>
-      <p>Pipelines de ML de punta a punta: ingesta → preprocesamiento → entrenamiento → evaluación → despliegue, orquestados y reproducibles. CI/CD de modelos, contenedores y orquestación, instrumentación de costo/latencia desde el día uno, arquitecturas lakehouse y streaming, e infraestructura como código.</p>
+      <h3><span class="dot"></span><span data-i18n="exp3.h3">MLOps &amp; Data Engineering</span></h3>
+      <p data-i18n="exp3.p">End-to-end ML pipelines: ingestion → preprocessing → training → evaluation → deployment, orchestrated and reproducible. Model CI/CD, containers and orchestration, cost/latency instrumentation from day one, lakehouse and streaming architectures, and infrastructure as code.</p>
       <div class="tools"><span>MLflow</span><span>Docker</span><span>Kubernetes</span><span>Terraform</span><span>FastAPI</span><span>Airflow / Prefect</span><span>Delta Lake</span><span>Kafka</span></div>
     </div>
 
     <div class="exp">
-      <h3><span class="dot"></span>Arquitectura de Software & Gobierno</h3>
-      <p>Diseño de sistemas con DDD y arquitectura hexagonal, decisiones documentadas en ADRs, y gobierno técnico a escala: mapas de capacidades, arquitectura medallion, tests de fitness de arquitectura y seguridad (RLS, escaneo de secretos/dependencias). Hablo el lenguaje del negocio y el del sistema.</p>
+      <h3><span class="dot"></span><span data-i18n="exp4.h3">Software Architecture &amp; Governance</span></h3>
+      <p data-i18n="exp4.p">System design with DDD and hexagonal architecture, decisions documented in ADRs, and technical governance at scale: capability maps, medallion architecture, architecture fitness tests and security (RLS, secret/dependency scanning). I speak the language of the business and of the system.</p>
       <div class="tools"><span>DDD / Hexagonal</span><span>ADRs</span><span>Neo4j</span><span>PostgreSQL</span><span>Redis</span><span>AWS · GCP</span></div>
     </div>
 
@@ -217,222 +228,223 @@
 </div></section>
 
 <section id="experience"><div class="wrap">
-  <div class="sec-label">Experiencia profesional</div>
-  <h2>Casos por dominio</h2>
-  <p class="lead-note">Casos de clientes descritos a alto nivel: sin código ni infraestructura interna, para proteger la propiedad y los datos. Lo que se muestra es la ingeniería y las herramientas.</p>
+  <div class="sec-label" data-i18n="experience.label">Professional experience</div>
+  <h2 data-i18n="experience.h2">Cases by domain</h2>
   <div class="cases">
 
     <div class="case">
-      <div class="role">Petróleo & Gas · producción industrial</div>
-      <h3>ML de detección de fallas + agente RAG en producción</h3>
-      <p>Modelos de detección de fallas desplegados en producción con <b style="color:#e8edf2">precisión &gt;90%</b>, con CI/CD de modelos y monitoreo de drift sobre AWS. Más recientemente, un agente RAG + action group que responde preguntas sobre la operación y el funcionamiento de pozos.</p>
+      <div class="role" data-i18n="case1.role">Oil &amp; Gas · industrial production</div>
+      <h3 data-i18n="case1.h3">Fault-detection ML + RAG agent in production</h3>
+      <p data-i18n="case1.p">Fault-detection models deployed in production with <b style="color:#e8edf2">&gt;90% accuracy</b>, with model CI/CD and drift monitoring on AWS. More recently, a RAG + action group agent that answers questions about well operation and behavior.</p>
       <div class="tools"><span>AWS</span><span>Python</span><span>RAG</span><span>Action Groups</span><span>Model CI/CD</span><span>Drift Monitoring</span></div>
     </div>
 
     <div class="case">
-      <div class="role">Banca · Banco de Chile (vía Stefanini)</div>
-      <h3>Arquitecto de datos — modelos escalables en GCP</h3>
-      <p>Diseño de modelos de datos escalables sobre GCP que <b style="color:#e8edf2">redujeron la latencia de consulta en 15%</b>, habilitando analítica sobre volúmenes de banca con contratos de datos claros.</p>
-      <div class="tools"><span>GCP</span><span>BigQuery</span><span>SQL</span><span>Modelado de datos</span></div>
+      <div class="role" data-i18n="case2.role">Banking · Banco de Chile (via Stefanini)</div>
+      <h3 data-i18n="case2.h3">Data architect — scalable models on GCP</h3>
+      <p data-i18n="case2.p">Design of scalable data models on GCP that <b style="color:#e8edf2">cut query latency by 15%</b>, enabling analytics over banking-scale volumes with clear data contracts.</p>
+      <div class="tools"><span>GCP</span><span>BigQuery</span><span>SQL</span><span>Data modeling</span></div>
     </div>
 
     <div class="case">
-      <div class="role">AgroTech · ITMeet SpA (CTO & fundador)</div>
-      <h3>Plataforma MLOps + edge AI para agricultura de precisión</h3>
-      <p>Dirección tecnológica de una plataforma de MLOps con despliegue de sensórica IIoT en terreno, edge AI, módulo de sostenibilidad (gases de efecto invernadero) y dashboard de operación. Validada en invernadero instrumentado en la Región del Biobío.</p>
-      <div class="tools"><span>Edge AI</span><span>IIoT</span><span>MLOps</span><span>Teledetección</span><span>Cloud</span><span>Dashboards</span></div>
+      <div class="role" data-i18n="case3.role">AgroTech · ITMeet(CTO &amp; founder)</div>
+      <h3 data-i18n="case3.h3">MLOps + IIoT + edge AI platform for precision agriculture</h3>
+      <p data-i18n="case3.p">Technical leadership of an MLOps platform with field-deployed IIoT sensing, edge AI, digital twins, a sustainability module and an operations dashboard. Validated in an instrumented greenhouse in the Biobío Region.</p>
+      <div class="tools"><span>Edge AI</span><span>IIoT</span><span>MLOps</span><span>Remote sensing</span><span>Cloud</span><span>Dashboards</span></div>
     </div>
 
     <div class="case">
-      <div class="role">Trayectoria previa · Ciencia de datos & MLOps</div>
-      <h3>Modelos de comportamiento y pipelines de datos</h3>
-      <p>Modelos de comportamiento de clientes y pipelines de MLOps en industrias de servicios y finanzas — la base de fundamentos estadísticos y de ingeniería sobre la que hoy construyo sistemas GenAI y agénticos.</p>
-      <div class="tools"><span>Python</span><span>SQL</span><span>ML clásico</span><span>Pipelines</span></div>
+      <div class="role" data-i18n="case4.role">Earlier track record · Data science &amp; MLOps</div>
+      <h3 data-i18n="case4.h3">Behavioral models and data pipelines</h3>
+      <p data-i18n="case4.p">Customer-behavior models and MLOps pipelines across service and finance industries — the statistical and engineering foundation on which I now build GenAI and agentic systems.</p>
+      <div class="tools"><span>Python</span><span>SQL</span><span>Classic ML</span><span>Pipelines</span></div>
     </div>
 
   </div>
 </div></section>
 
 <section id="projects"><div class="wrap">
-  <div class="sec-label">Proyectos con código</div>
-  <h2>Trabajo público seleccionado</h2>
-  <p class="lead-note">Proyectos personales y académicos, con código abierto — sin datos de clientes ni lógica de negocio propietaria.</p>
+  <div class="sec-label" data-i18n="projects.label">Projects with code</div>
+  <h2 data-i18n="projects.h2">Selected public work</h2>
+  <p class="lead-note" data-i18n="projects.note">Personal and academic projects, open source — no client data or proprietary business logic.</p>
   <div class="grid">
 
     <article class="card">
-      <div class="kicker">Computer Vision</div>
+      <div class="kicker" data-i18n="card1.kicker">Computer Vision</div>
       <h3>Hand Pose CNN</h3>
-      <div class="row"><b>Problema:</b> estimar la pose y articulaciones de una mano a partir de imágenes.</div>
-      <div class="row"><b>Enfoque:</b> landmarks con MediaPipe + CNN con transfer learning real (VGG19 preentrenada), 2D/3D.</div>
-      <div class="row"><b>Resultado:</b> pipeline completo de dato crudo a modelo evaluado — base de percepción para IA física.</div>
+      <div class="row" data-i18n="card1.problem"><b>Problem:</b> estimate the pose and joints of a hand from images.</div>
+      <div class="row" data-i18n="card1.approach"><b>Approach:</b> landmarks with MediaPipe + CNN with real transfer learning (pretrained VGG19), 2D/3D.</div>
+      <div class="row" data-i18n="card1.result"><b>Result:</b> full pipeline from raw data to evaluated model — perception foundation for physical AI.</div>
       <div class="stack"><span>TensorFlow</span><span>MediaPipe</span><span>VGG19</span><span>OpenCV</span></div>
-      <div class="links"><a href="https://github.com/MarceloGarcia92/hand-pose-cnn" target="_blank" rel="noopener">Ver código →</a></div>
+      <div class="links"><a href="https://github.com/MarceloGarcia92/hand-pose-cnn" target="_blank" rel="noopener" data-i18n="link.code">View code →</a></div>
     </article>
 
     <article class="card">
-      <div class="kicker">Imagen médica</div>
+      <div class="kicker" data-i18n="card2.kicker">Medical imaging</div>
       <h3>Pleural Effusion CNN</h3>
-      <div class="row"><b>Problema:</b> detectar fluido pleural en estudios de tórax DICOM.</div>
-      <div class="row"><b>Enfoque:</b> transfer learning (DenseNet121, ResNet50V2, InceptionV3) con split a nivel de paciente (sin fuga de datos).</div>
-      <div class="row"><b>Resultado:</b> clasificación evaluada con accuracy, precision, recall, ROC-AUC y matriz de confusión.</div>
+      <div class="row" data-i18n="card2.problem"><b>Problem:</b> detect pleural fluid in DICOM chest studies.</div>
+      <div class="row" data-i18n="card2.approach"><b>Approach:</b> transfer learning (DenseNet121, ResNet50V2, InceptionV3) with patient-level split (no data leakage).</div>
+      <div class="row" data-i18n="card2.result"><b>Result:</b> classification evaluated with accuracy, precision, recall, ROC-AUC and confusion matrix.</div>
       <div class="stack"><span>Keras</span><span>DenseNet</span><span>pydicom</span><span>Transfer Learning</span></div>
-      <div class="links"><a href="https://github.com/MarceloGarcia92/pleural-effusion-cnn" target="_blank" rel="noopener">Ver código →</a></div>
+      <div class="links"><a href="https://github.com/MarceloGarcia92/pleural-effusion-cnn" target="_blank" rel="noopener" data-i18n="link.code">View code →</a></div>
     </article>
 
     <article class="card">
-      <div class="kicker">MLOps</div>
-      <h3>EO-ML Pipeline <span class="badge ip">referencia</span></h3>
-      <div class="row"><b>Problema:</b> automatizar un ciclo de ML de punta a punta para observación de la Tierra / AgroTech.</div>
-      <div class="row"><b>Enfoque:</b> ingesta → preprocesamiento → entrenamiento → evaluación → deploy, orquestado y contenerizado.</div>
-      <div class="row"><b>Resultado:</b> pipeline reproducible (EuroSAT/ResNet18) con datos públicos — implementación de referencia.</div>
+      <div class="kicker" data-i18n="card3.kicker">MLOps</div>
+      <h3>EO-ML Pipeline <span class="badge ip" data-i18n="card3.badge">reference</span></h3>
+      <div class="row" data-i18n="card3.problem"><b>Problem:</b> automate an end-to-end ML cycle for Earth observation / AgroTech.</div>
+      <div class="row" data-i18n="card3.approach"><b>Approach:</b> ingestion → preprocessing → training → evaluation → deploy, orchestrated and containerized.</div>
+      <div class="row" data-i18n="card3.result"><b>Result:</b> reproducible pipeline (EuroSAT/ResNet18) with public data — reference implementation.</div>
       <div class="stack"><span>PyTorch</span><span>Docker</span><span>Makefile</span><span>CI/CD</span></div>
-      <div class="links"><a href="https://github.com/MarceloGarcia92/eo-ml-pipeline" target="_blank" rel="noopener">Ver código →</a></div>
+      <div class="links"><a href="https://github.com/MarceloGarcia92/eo-ml-pipeline" target="_blank" rel="noopener" data-i18n="link.code">View code →</a></div>
     </article>
 
     <article class="card">
-      <div class="kicker">IA conversacional</div>
+      <div class="kicker" data-i18n="card4.kicker">Conversational AI</div>
       <h3>MedBot (Rasa)</h3>
-      <div class="row"><b>Problema:</b> agendar citas médicas por lenguaje natural en español.</div>
-      <div class="row"><b>Enfoque:</b> Rasa NLU + custom actions, persistencia en PostgreSQL.</div>
-      <div class="row"><b>Resultado:</b> desplegable con Docker y Kubernetes (autoscaling, ingress, secrets).</div>
+      <div class="row" data-i18n="card4.problem"><b>Problem:</b> book medical appointments through natural language in Spanish.</div>
+      <div class="row" data-i18n="card4.approach"><b>Approach:</b> Rasa NLU + custom actions, persistence in PostgreSQL.</div>
+      <div class="row" data-i18n="card4.result"><b>Result:</b> deployable with Docker and Kubernetes (autoscaling, ingress, secrets).</div>
       <div class="stack"><span>Rasa</span><span>Docker</span><span>Kubernetes</span><span>PostgreSQL</span></div>
-      <div class="links"><a href="https://github.com/MarceloGarcia92/medbot-rasa" target="_blank" rel="noopener">Ver código →</a></div>
+      <div class="links"><a href="https://github.com/MarceloGarcia92/medbot-rasa" target="_blank" rel="noopener" data-i18n="link.code">View code →</a></div>
     </article>
 
     <article class="card">
-      <div class="kicker">Full-stack</div>
+      <div class="kicker" data-i18n="card5.kicker">Full-stack</div>
       <h3>Meal Planner</h3>
-      <div class="row"><b>Problema:</b> planificar comidas según inventario y reducir desperdicio.</div>
-      <div class="row"><b>Enfoque:</b> Next.js + Clerk + Supabase, con aislamiento por RLS correcto (políticas por usuario).</div>
-      <div class="row"><b>Resultado:</b> app con auth, seguridad a nivel de fila y planificador semanal — producto end-to-end.</div>
+      <div class="row" data-i18n="card5.problem"><b>Problem:</b> plan meals based on inventory and reduce waste.</div>
+      <div class="row" data-i18n="card5.approach"><b>Approach:</b> Next.js + Clerk + Supabase, with correct RLS isolation (per-user policies).</div>
+      <div class="row" data-i18n="card5.result"><b>Result:</b> app with auth, row-level security and a weekly planner — end-to-end product.</div>
       <div class="stack"><span>Next.js</span><span>Supabase</span><span>Clerk</span><span>Tailwind</span></div>
-      <div class="links"><a href="https://github.com/MarceloGarcia92/meal-planner" target="_blank" rel="noopener">Ver código →</a></div>
+      <div class="links"><a href="https://github.com/MarceloGarcia92/meal-planner" target="_blank" rel="noopener" data-i18n="link.code">View code →</a></div>
     </article>
 
     <article class="card" style="justify-content:center;background:var(--panel-2);border-style:dashed">
-      <div class="kicker">Más en GitHub</div>
-      <h3>Repositorios adicionales</h3>
-      <div class="row" style="color:var(--muted)">El detalle técnico reproducible de cada proyecto, con README, arquitectura y stack, vive en mi perfil.</div>
-      <div class="links"><a href="https://github.com/MarceloGarcia92" target="_blank" rel="noopener">Ver GitHub →</a></div>
+      <div class="kicker" data-i18n="card6.kicker">More on GitHub</div>
+      <h3 data-i18n="card6.h3">Additional repositories</h3>
+      <div class="row" style="color:var(--muted)" data-i18n="card6.body">The reproducible technical detail of each project, with README, architecture and stack, lives on my profile.</div>
+      <div class="links"><a href="https://github.com/MarceloGarcia92" target="_blank" rel="noopener" data-i18n="link.github">View GitHub →</a></div>
     </article>
 
   </div>
 </div></section>
 
+<!-- TODO: sección "Research & development" en construcción — descomentar cuando esté lista
 <section id="rd"><div class="wrap">
-  <div class="sec-label">Investigación & desarrollo</div>
-  <h2>Capacidades demostradas en I+D</h2>
-  <p class="lead-note">Pruebas de concepto e iniciativas de arquitectura construidas en el ecosistema de ITMeet. El código no es público por tratarse de I+D interna; lo que se describe es la capacidad de ingeniería y las herramientas utilizadas.</p>
+  <div class="sec-label" data-i18n="rd.label">Research &amp; development</div>
+  <h2 data-i18n="rd.h2">Demonstrated R&amp;D capabilities</h2>
+  <p class="lead-note" data-i18n="rd.note">Proofs of concept and architecture initiatives built within the ITMeet ecosystem. The code is not public as it is internal R&amp;D; what's described is the engineering capability and the tools used.</p>
   <div class="rd-grid">
 
     <div class="rd">
-      <h3>Orquestación multiagente gobernada + servidor MCP</h3>
-      <p>Plataforma que ensambla equipos de agentes de IA a partir de un catálogo de <b style="color:#e8edf2">+500 agentes tipados por capacidades</b> y una base de conocimiento de arquitectura (ADRs, patrones, estándares, arquetipos, arquitecturas de referencia). Composición de equipos por contratos de capacidades, expuesta vía MCP, con tests y CI que exigen resolución de artefactos.</p>
+      <h3 data-i18n="rd1.h3">Governed multi-agent orchestration + MCP server</h3>
+      <p data-i18n="rd1.p">A platform that assembles teams of AI agents from a catalog of <b style="color:#e8edf2">capability-typed agents</b> and an architecture knowledge base (ADRs, patterns, standards, archetypes, reference architectures). Team composition by capability contracts, exposed via MCP, with tests and CI that require artifact resolution.</p>
       <div class="tools"><span>Python</span><span>MCP</span><span>Neo4j</span><span>Qdrant</span><span>JSON Schema</span><span>CI</span></div>
     </div>
 
     <div class="rd">
-      <h3>CAD/BIM orquestable por LLM + análisis estructural (FEA)</h3>
-      <p>Sistema BIM/CAD controlable por un LLM a través de MCP: visor 3D en el navegador, kernel paramétrico y un servicio de análisis estructural por elementos finitos. Arquitectura DDD estricta en monorepo. Prueba de concepto en el cruce de IA agéntica e ingeniería física.</p>
+      <h3 data-i18n="rd2.h3">LLM-orchestrable CAD/BIM + structural analysis (FEA)</h3>
+      <p data-i18n="rd2.p">A BIM/CAD system controllable by an LLM through MCP: in-browser 3D viewer, parametric kernel and a finite-element structural analysis service. Strict DDD architecture in a monorepo. Proof of concept at the crossroads of agentic AI and physical engineering.</p>
       <div class="tools"><span>MCP</span><span>Next.js</span><span>three.js</span><span>web-ifc</span><span>ifcopenshell</span><span>PyNiteFEA</span></div>
     </div>
 
     <div class="rd">
-      <h3>Control de gestión con IA (SCG)</h3>
-      <p>Plataforma de sistema de control de gestión —BSC/OKR/KPI, forecasting y simulación de escenarios— con agentes GenAI para tareas específicas (screening, presales, proyección financiera) sobre pipelines de datos medallion (Bronze/Silver). Une mi base de Control de Gestión con la IA agéntica.</p>
+      <h3 data-i18n="rd3.h3">Management control with AI (SCG)</h3>
+      <p data-i18n="rd3.p">A management-control-system platform —BSC/OKR/KPI, forecasting and scenario simulation— with GenAI agents for specific tasks (screening, presales, financial projection) over medallion data pipelines (Bronze/Silver). It unites my Management Control foundation with agentic AI.</p>
       <div class="tools"><span>FastAPI</span><span>Celery / Redis</span><span>PostgreSQL</span><span>MLflow</span><span>n8n</span><span>Gemini</span><span>Next.js</span></div>
     </div>
 
     <div class="rd">
-      <h3>Lakehouse + GenAI para segmentación</h3>
-      <p>Segmentación no supervisada de clientes (clustering) y diseño generativo con modelos de difusión, sobre una arquitectura lakehouse con streaming y orquestación. Demuestra el ciclo dato → insight → activación con GenAI encima de ingeniería de datos sólida.</p>
+      <h3 data-i18n="rd4.h3">Lakehouse + GenAI for segmentation</h3>
+      <p data-i18n="rd4.p">Unsupervised customer segmentation (clustering) and generative design with diffusion models, over a lakehouse architecture with streaming and orchestration. It demonstrates the data → insight → activation cycle with GenAI on top of solid data engineering.</p>
       <div class="tools"><span>PyTorch</span><span>diffusers</span><span>scikit-learn</span><span>Delta Lake</span><span>Kafka</span><span>Airflow</span></div>
     </div>
 
     <div class="rd">
-      <h3>Pipeline de visión por computador (pose)</h3>
-      <p>Pipeline de extracción de pose y características biomecánicas con MediaPipe y OpenCV, con versionado de datos y arquitectura hexagonal — percepción aplicada, un ladrillo directo hacia la IA física y los gemelos digitales.</p>
+      <h3 data-i18n="rd5.h3">Computer vision pipeline (pose)</h3>
+      <p data-i18n="rd5.p">A pose and biomechanical-feature extraction pipeline with MediaPipe and OpenCV, with data versioning and hexagonal architecture — applied perception, a direct building block toward physical AI and digital twins.</p>
       <div class="tools"><span>MediaPipe</span><span>OpenCV</span><span>DVC</span><span>Parquet</span><span>Python</span></div>
     </div>
 
     <div class="rd">
-      <h3>Multiagente con guardrails de riesgo en capas</h3>
-      <p>Sistema multiagente de modelado financiero (NPV/IRR, runway, ledger de doble entrada) con una cadena de guardas de riesgo en capas orquestada con LangGraph y observabilidad de extremo a extremo — ejemplo de autonomía acotada y segura en producción.</p>
+      <h3 data-i18n="rd6.h3">Multi-agent with layered risk guardrails</h3>
+      <p data-i18n="rd6.p">A multi-agent financial-modeling system (NPV/IRR, runway, double-entry ledger) with a layered chain of risk guards orchestrated with LangGraph and end-to-end observability — an example of bounded, safe autonomy in production.</p>
       <div class="tools"><span>LangGraph</span><span>FastAPI</span><span>GraphQL</span><span>OpenTelemetry</span><span>PostgreSQL</span></div>
     </div>
 
   </div>
 </div></section>
+-->
 
 <section id="research"><div class="wrap">
-  <div class="sec-label">Investigación doctoral</div>
-  <h2>Línea de investigación</h2>
+  <div class="sec-label" data-i18n="research.label">Doctoral research</div>
+  <h2 data-i18n="research.h2">Research line</h2>
   <div class="research">
-    <div class="role" style="font-size:12px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--accent)">Propuesta 2026 · Doctorado en Inteligencia Artificial · Consorcio CRUCh Biobío-Ñuble</div>
-    <div class="thesis">Metodología de control de gestión autónomo y trazable mediante una arquitectura agéntica, validada en agricultura (Agro 5.0).</div>
-    <p>Los sistemas de gestión —y los de Agro 4.0— miden, predicen y recomiendan, pero la <strong style="color:#e8edf2">decisión y la acción</strong> sobre el proceso siguen dependiendo de un operador y rara vez se trazan. Propongo una <strong style="color:#e8edf2">capa de ejecución agéntica</strong> que cierra el ciclo <em>estrategia → indicadores → decisión → acción</em> de forma autónoma y trazable, con contratos explícitos de capacidades, extendiendo un marco de control de gestión (BSC de Kaplan &amp; Norton, MAD) con arquitectura multiagente.</p>
+    <div class="role" style="font-size:12px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--accent)" data-i18n="research.badge">2026 Proposal · PhD in Artificial Intelligence · CRUCh Biobío-Ñuble Consortium</div>
+    <div class="thesis" data-i18n="research.thesis">A methodology for autonomous and traceable management control through an agentic architecture, validated in agriculture (Agro 5.0).</div>
+    <p data-i18n="research.p">Management systems —and Agro 4.0 ones— measure, predict and recommend, but the <strong style="color:#e8edf2">decision and action</strong> over the process still depend on an operator and are rarely traced. I propose an <strong style="color:#e8edf2">agentic execution layer</strong> that closes the <em>strategy → indicators → decision → action</em> loop autonomously and traceably, with explicit capability contracts, extending a management-control framework (Kaplan &amp; Norton's BSC, MAD) with multi-agent architecture.</p>
     <ul>
-      <li><b>Metodología:</b> Design Science Research (DSR)</li>
-      <li><b>Validación:</b> invernaderos instrumentados en el Biobío</li>
-      <li><b>Datos:</b> sensórica IoT de terreno + teledetección satelital</li>
-      <li><b>Pregunta:</b> ¿mejora la capa agéntica la trazabilidad y resiliencia de las decisiones vs. un pipeline data-science?</li>
+      <li data-i18n="research.li1"><b>Methodology:</b> Design Science Research (DSR)</li>
+      <li data-i18n="research.li2"><b>Validation:</b> instrumented greenhouses in Biobío</li>
+      <li data-i18n="research.li3"><b>Data:</b> field IoT sensing + satellite remote sensing</li>
+      <li data-i18n="research.li4"><b>Question:</b> does the agentic layer improve the traceability and resilience of decisions vs. a data-science pipeline?</li>
     </ul>
   </div>
 </div></section>
 
 <section id="education"><div class="wrap">
-  <div class="sec-label">Formación & certificaciones</div>
-  <h2>Base académica y credenciales</h2>
+  <div class="sec-label" data-i18n="education.label">Education &amp; certifications</div>
+  <h2 data-i18n="education.h2">Academic foundation and credentials</h2>
   <div class="edu-grid">
     <div class="edu-list">
       <div class="edu-item">
-        <h4>Magíster en Control de Gestión <span style="color:var(--muted);font-weight:400">— mención Ciencia de Datos</span></h4>
-        <span>Facultad de Economía y Negocios, Universidad de Chile</span>
+        <h4 data-i18n="edu1.h4">Master's in Management Control <span style="color:var(--muted);font-weight:400">— Data Science track</span></h4>
+        <span data-i18n="edu1.span">School of Economics and Business, University of Chile</span>
       </div>
       <div class="edu-item">
-        <h4>Ingeniero Civil Industrial</h4>
-        <span>Universidad San Sebastián, Concepción</span>
+        <h4 data-i18n="edu2.h4">Industrial Civil Engineer</h4>
+        <span data-i18n="edu2.span">Universidad San Sebastián, Concepción</span>
       </div>
       <div class="edu-item">
-        <h4>Docencia — Módulo de datos satelitales / teledetección</h4>
-        <span>Magíster en Agro 4.0 (España)</span>
+        <h4 data-i18n="edu3.h4">Teaching — Satellite data / remote sensing module</h4>
+        <span data-i18n="edu3.span">Master's in Agro 4.0 (Spain)</span>
       </div>
     </div>
     <div class="cert-box">
-      <h4>Certificaciones</h4>
-      <div class="cert"><span class="ck">✓</span> Certified Kubernetes</div>
-      <div class="cert"><span class="ck">✓</span> TensorFlow Developer Certificate — Google</div>
-      <div class="cert"><span class="ck">✓</span> Nacionalidad chilena e italiana (UE)</div>
+      <h4 data-i18n="cert.h4">Certifications</h4>
+      <div class="cert"><span class="ck">✓</span> <span data-i18n="cert.1">Certified Kubernetes</span></div>
+      <div class="cert"><span class="ck">✓</span> <span data-i18n="cert.2">TensorFlow Developer Certificate — Google</span></div>
+      <div class="cert"><span class="ck">✓</span> <span data-i18n="cert.3">Chilean and Italian (EU) nationality</span></div>
     </div>
   </div>
 </div></section>
 
 <section id="stack"><div class="wrap">
-  <div class="sec-label">Herramientas</div>
-  <h2>Stack técnico</h2>
+  <div class="sec-label" data-i18n="stack.label">Tools</div>
+  <h2 data-i18n="stack.h2">Technical stack</h2>
   <div class="stack-groups">
     <div class="sg">
-      <h4>Lenguajes</h4>
+      <h4 data-i18n="sg1.h4">Languages</h4>
       <div class="chips"><span>Python</span><span>SQL</span><span>TypeScript</span></div>
     </div>
     <div class="sg">
-      <h4>GenAI & Agentic</h4>
-      <div class="chips"><span>LangChain</span><span>LangGraph</span><span>MCP</span><span>RAGAS</span><span>Langfuse</span><span>LangSmith</span><span>Qdrant</span><span>pgvector</span></div>
+      <h4 data-i18n="sg2.h4">GenAI &amp; Agentic</h4>
+      <div class="chips"><span>LangChain</span><span>LangGraph</span><span>MCP</span><span>RAGAS</span><span>Langfuse</span><span>LangSmith</span><span>Qdrant</span></div>
     </div>
     <div class="sg">
-      <h4>ML & Computer Vision</h4>
+      <h4 data-i18n="sg3.h4">ML &amp; Computer Vision</h4>
       <div class="chips"><span>TensorFlow</span><span>PyTorch</span><span>Keras</span><span>scikit-learn</span><span>OpenCV</span><span>MediaPipe</span><span>diffusers</span></div>
     </div>
     <div class="sg">
-      <h4>MLOps & Data</h4>
+      <h4 data-i18n="sg4.h4">MLOps &amp; Data</h4>
       <div class="chips"><span>MLflow</span><span>Docker</span><span>Kubernetes</span><span>Terraform</span><span>FastAPI</span><span>Airflow</span><span>Prefect</span><span>Delta Lake</span><span>Kafka</span><span>n8n</span></div>
     </div>
     <div class="sg">
-      <h4>Cloud</h4>
+      <h4 data-i18n="sg5.h4">Cloud</h4>
       <div class="chips"><span>AWS</span><span>GCP</span></div>
     </div>
     <div class="sg">
-      <h4>Datos & Arquitectura</h4>
+      <h4 data-i18n="sg6.h4">Data &amp; Architecture</h4>
       <div class="chips"><span>PostgreSQL</span><span>Supabase</span><span>Neo4j</span><span>Redis</span><span>DDD / Hexagonal</span><span>ADRs</span><span>Medallion</span></div>
     </div>
   </div>
@@ -440,10 +452,10 @@
 
 <section id="contact"><div class="wrap">
   <div class="contact-box">
-    <h2>Conversemos</h2>
-    <p>Abierto a oportunidades y colaboraciones en GenAI e IA agéntica, ML, visión por computador e IA física.</p>
+    <h2 data-i18n="contact.h2">Let's talk</h2>
+    <p data-i18n="contact.p">Open to opportunities and collaborations in GenAI and agentic AI, ML, computer vision and physical AI.</p>
     <div class="contact-links">
-      <a class="btn primary" href="mailto:mgarciac@saitsolutions.org">Escríbeme</a>
+      <a class="btn primary" href="mailto:mgarciac@saitsolutions.org" data-i18n="contact.write">Email me</a>
       <a class="btn ghost" href="https://www.linkedin.com/in/marcelo-garcia-c/" target="_blank" rel="noopener">LinkedIn</a>
       <a class="btn ghost" href="https://github.com/MarceloGarcia92" target="_blank" rel="noopener">GitHub</a>
     </div>
@@ -451,8 +463,192 @@
 </div></section>
 
 <footer><div class="wrap">
-  © 2026 Marcelo García C. · AI Architect & Engineer · Physical AI · Hecho con HTML estático
+  <span data-i18n="footer">© 2026 Marcelo García C. · AI Architect &amp; Engineer · Physical AI · Built with static HTML</span>
 </div></footer>
+
+<script>
+  const I18N = {
+    es: {
+      "nav.about": "Perfil",
+      "nav.expertise": "Expertise",
+      "nav.experience": "Experiencia",
+      "nav.projects": "Proyectos",
+      "nav.rd": "I+D",
+      "nav.research": "Investigación",
+      "nav.contact": "Contacto",
+
+      "hero.h1": "Diseño y construyo sistemas de IA que <em>llegan a producción</em> — del modelo al mundo físico.",
+      "hero.lead": "Arquitecto e ingeniero de IA con 8+ años en banca, petróleo &amp; gas y agricultura de precisión. Fundador y CTO de <strong style=\"color:#e8edf2\">ITMeet</strong>. Construyo sistemas <strong style=\"color:#e8edf2\">GenAI y agénticos</strong>, ML y visión por computador, y los llevo a producción con la disciplina de ingeniería que suelen faltarles. Hoy avanzo hacia la <strong style=\"color:#e8edf2\">IA física y los gemelos digitales</strong>.",
+      "cta.work": "Ver trabajo ↓",
+      "tag.1": "GenAI &amp; IA Agéntica",
+      "tag.2": "RAG · Multiagente · MCP",
+      "tag.3": "Computer Vision",
+      "tag.4": "MLOps",
+      "tag.5": "Arquitectura Cloud",
+      "tag.6": "AgroTech · Physical AI",
+
+      "about.label": "Perfil",
+      "about.h2": "De la métrica de negocio al sistema en producción",
+      "about.p1": "Mi base es Ingeniería Civil Industrial más un Magíster en Control de Gestión: aprendí primero el <strong>ROI y el criterio de negocio</strong>, y desde ahí profundicé en la ejecución técnica — científico de datos, ingeniero de datos, arquitecto de datos e IA. Ese recorrido me dio algo poco común: Diseño la arquitectura y escribo código listo para producción, asegurando que la solución sea robusta, económica y capaz de escalar para usuarios reales.",
+      "about.p2": "No convierto cada problema en un LLM. Uso ML tradicional cuando es la herramienta correcta y escalo la autonomía (agentes) solo cuando un diseño más simple demuestra que no es suficiente. Cada recomendación viene con su trade-off y su consideración de costo.",
+      "about.p3": "Hoy fusiono la visión estrategica con la ejecución técnica de <strong>ITMeet</strong> y avanzo hacia la <strong>IA física y los gemelos digitales</strong>: la percepción y la orquestación de agentes como puente entre el dato y la acción en el mundo real — con una línea de <a href=\"#research\" class=\"accent\">investigación doctoral</a> que formaliza ese cruce en agricultura (Agro 5.0).",
+
+      "expertise.label": "Expertise",
+      "expertise.h2": "Áreas de especialización",
+      "exp1.h3": "GenAI &amp; IA Agéntica",
+      "exp1.p": "RAG sobre documentos (ingesta y consulta, búsqueda híbrida, reranking, control de acceso por metadatos) con evaluación real (RAGAS + revisión humana). Sistemas agénticos con function calling, orquestación multiagente y MCP, con los guardrails que producción sí necesita: permisos de mínimo privilegio, validación E/S, topes de iteración y presupuesto, y trazabilidad completa.",
+      "exp2.h3": "Machine Learning &amp; Computer Vision",
+      "exp2.p": "Clasificación sobre datos desbalanceados (SMOTE), visión por computador (CNN, transfer learning, estimación de pose), validación rigurosa y monitoreo de drift. Modelos en producción con precisión por encima del 90%, evaluados con métricas honestas (precision/recall, AUC, matriz de confusión) — no solo accuracy.",
+      "exp3.h3": "MLOps &amp; Data Engineering",
+      "exp3.p": "Pipelines de ML de punta a punta: ingesta → preprocesamiento → entrenamiento → evaluación → despliegue, orquestados y reproducibles. CI/CD de modelos, contenedores y orquestación, instrumentación de costo/latencia desde el día uno, arquitecturas lakehouse y streaming, e infraestructura como código.",
+      "exp4.h3": "Arquitectura de Software &amp; Gobierno",
+      "exp4.p": "Diseño de sistemas con DDD y arquitectura hexagonal, decisiones documentadas en ADRs, y gobierno técnico a escala: mapas de capacidades, arquitectura medallion, tests de fitness de arquitectura y seguridad (RLS, escaneo de secretos/dependencias). Hablo el lenguaje del negocio y el del sistema.",
+
+      "experience.label": "Experiencia profesional",
+      "experience.h2": "Casos por dominio",
+      "case1.role": "Petróleo &amp; Gas · producción industrial",
+      "case1.h3": "ML de detección de fallas + agente RAG en producción",
+      "case1.p": "Modelos de detección de fallas desplegados en producción con <b style=\"color:#e8edf2\">precisión &gt;90%</b>, con CI/CD de modelos y monitoreo de drift sobre AWS. Más recientemente, un agente RAG + action group que responde preguntas sobre la operación y el funcionamiento de pozos.",
+      "case2.role": "Banca · Banco de Chile (vía Stefanini)",
+      "case2.h3": "Arquitecto de datos — modelos escalables en GCP",
+      "case2.p": "Diseño de modelos de datos escalables sobre GCP que <b style=\"color:#e8edf2\">redujeron la latencia de consulta en 15%</b>, habilitando analítica sobre volúmenes de banca con contratos de datos claros.",
+      "case3.role": "AgroTech · ITMeet (CTO &amp; fundador)",
+      "case3.h3": "Plataforma MLOps + IIoT + edge AI para agricultura de precisión",
+      "case3.p": "Dirección tecnológica de una plataforma de MLOps con despliegue de sensores en terreno, edge AI, gemelo digital, módulo de sostenibilidad y dashboard de operación. Validada en invernadero instrumentado en la Región del Biobío.",
+      "case4.role": "Trayectoria previa · Ciencia de datos &amp; MLOps",
+      "case4.h3": "Modelos de comportamiento y pipelines de datos",
+      "case4.p": "Modelos de comportamiento de clientes y pipelines de MLOps en industrias de servicios y finanzas — la base de fundamentos estadísticos y de ingeniería sobre la que hoy construyo sistemas GenAI y agénticos.",
+
+      "projects.label": "Proyectos con código",
+      "projects.h2": "Trabajo público seleccionado",
+      "projects.note": "Proyectos personales y académicos, con código abierto — sin datos de clientes ni lógica de negocio propietaria.",
+      "link.code": "Ver código →",
+      "link.github": "Ver GitHub →",
+      "card1.kicker": "Computer Vision",
+      "card1.problem": "<b>Problema:</b> estimar la pose y articulaciones de una mano a partir de imágenes.",
+      "card1.approach": "<b>Enfoque:</b> landmarks con MediaPipe + CNN con transfer learning real (VGG19 preentrenada), 2D/3D.",
+      "card1.result": "<b>Resultado:</b> pipeline completo de dato crudo a modelo evaluado — base de percepción para IA física.",
+      "card2.kicker": "Imagen médica",
+      "card2.problem": "<b>Problema:</b> detectar fluido pleural en estudios de tórax DICOM.",
+      "card2.approach": "<b>Enfoque:</b> transfer learning (DenseNet121, ResNet50V2, InceptionV3) con split a nivel de paciente (sin fuga de datos).",
+      "card2.result": "<b>Resultado:</b> clasificación evaluada con accuracy, precision, recall, ROC-AUC y matriz de confusión.",
+      "card3.kicker": "MLOps",
+      "card3.badge": "referencia",
+      "card3.problem": "<b>Problema:</b> automatizar un ciclo de ML de punta a punta para observación de la Tierra / AgroTech.",
+      "card3.approach": "<b>Enfoque:</b> ingesta → preprocesamiento → entrenamiento → evaluación → deploy, orquestado y contenerizado.",
+      "card3.result": "<b>Resultado:</b> pipeline reproducible (EuroSAT/ResNet18) con datos públicos — implementación de referencia.",
+      "card4.kicker": "IA conversacional",
+      "card4.problem": "<b>Problema:</b> agendar citas médicas por lenguaje natural en español.",
+      "card4.approach": "<b>Enfoque:</b> Rasa NLU + custom actions, persistencia en PostgreSQL.",
+      "card4.result": "<b>Resultado:</b> desplegable con Docker y Kubernetes (autoscaling, ingress, secrets).",
+      "card5.kicker": "Full-stack",
+      "card5.problem": "<b>Problema:</b> planificar comidas según inventario y reducir desperdicio.",
+      "card5.approach": "<b>Enfoque:</b> Next.js + Clerk + Supabase, con aislamiento por RLS correcto (políticas por usuario).",
+      "card5.result": "<b>Resultado:</b> app con auth, seguridad a nivel de fila y planificador semanal — producto end-to-end.",
+      "card6.kicker": "Más en GitHub",
+      "card6.h3": "Repositorios adicionales",
+      "card6.body": "El detalle técnico reproducible de cada proyecto, con README, arquitectura y stack, vive en mi perfil.",
+
+      "rd.label": "Investigación &amp; desarrollo",
+      "rd.h2": "Capacidades demostradas en I+D",
+      "rd.note": "Pruebas de concepto e iniciativas de arquitectura construidas en el ecosistema de ITMeet. El código no es público por tratarse de I+D interna; lo que se describe es la capacidad de ingeniería y las herramientas utilizadas.",
+      "rd1.h3": "Orquestación multiagente gobernada + servidor MCP",
+      "rd1.p": "Plataforma que ensambla equipos de agentes de IA a partir de un catálogo de <b style=\"color:#e8edf2\">agentes tipados por capacidades</b> y una base de conocimiento de arquitectura (ADRs, patrones, estándares, arquetipos, arquitecturas de referencia). Composición de equipos por contratos de capacidades, expuesta vía MCP, con tests y CI que exigen resolución de artefactos.",
+      "rd2.h3": "CAD/BIM orquestable por LLM + análisis estructural (FEA)",
+      "rd2.p": "Sistema BIM/CAD controlable por un LLM a través de MCP: visor 3D en el navegador, kernel paramétrico y un servicio de análisis estructural por elementos finitos. Arquitectura DDD estricta en monorepo. Prueba de concepto en el cruce de IA agéntica e ingeniería física.",
+      "rd3.h3": "Control de gestión con IA (SCG)",
+      "rd3.p": "Plataforma de sistema de control de gestión —BSC/OKR/KPI, forecasting y simulación de escenarios— con agentes GenAI para tareas específicas (screening, presales, proyección financiera) sobre pipelines de datos medallion (Bronze/Silver). Une mi base de Control de Gestión con la IA agéntica.",
+      "rd4.h3": "Lakehouse + GenAI para segmentación",
+      "rd4.p": "Segmentación no supervisada de clientes (clustering) y diseño generativo con modelos de difusión, sobre una arquitectura lakehouse con streaming y orquestación. Demuestra el ciclo dato → insight → activación con GenAI encima de ingeniería de datos sólida.",
+      "rd5.h3": "Pipeline de visión por computador (pose)",
+      "rd5.p": "Pipeline de extracción de pose y características biomecánicas con MediaPipe y OpenCV, con versionado de datos y arquitectura hexagonal — percepción aplicada, un ladrillo directo hacia la IA física y los gemelos digitales.",
+      "rd6.h3": "Multiagente con guardrails de riesgo en capas",
+      "rd6.p": "Sistema multiagente de modelado financiero (NPV/IRR, runway, ledger de doble entrada) con una cadena de guardas de riesgo en capas orquestada con LangGraph y observabilidad de extremo a extremo — ejemplo de autonomía acotada y segura en producción.",
+
+      "research.label": "Investigación doctoral",
+      "research.h2": "Línea de investigación",
+      "research.badge": "Propuesta 2026 · Doctorado en Inteligencia Artificial · Consorcio CRUCh Biobío-Ñuble",
+      "research.thesis": "Metodología de control de gestión autónomo y trazable mediante una arquitectura agéntica, validada en agricultura (Agro 5.0).",
+      "research.p": "Los sistemas de gestión —y los de Agro 4.0— miden, predicen y recomiendan, pero la <strong style=\"color:#e8edf2\">decisión y la acción</strong> sobre el proceso siguen dependiendo de un operador y rara vez se trazan. Propongo una <strong style=\"color:#e8edf2\">capa de ejecución agéntica</strong> que cierra el ciclo <em>estrategia → indicadores → decisión → acción</em> de forma autónoma y trazable, con contratos explícitos de capacidades, extendiendo un marco de control de gestión (BSC de Kaplan &amp; Norton, MAD) con arquitectura multiagente.",
+      "research.li1": "<b>Metodología:</b> Design Science Research (DSR)",
+      "research.li2": "<b>Validación:</b> invernaderos instrumentados en el Biobío",
+      "research.li3": "<b>Datos:</b> sensores de terreno + teledetección satelital",
+      "research.li4": "<b>Pregunta:</b> ¿mejora la capa agéntica la trazabilidad y resiliencia de las decisiones vs. un pipeline data-science?",
+
+      "education.label": "Formación &amp; certificaciones",
+      "education.h2": "Base académica y credenciales",
+      "edu1.h4": "Magíster en Control de Gestión <span style=\"color:var(--muted);font-weight:400\">— mención Ciencia de Datos</span>",
+      "edu1.span": "Facultad de Economía y Negocios, Universidad de Chile",
+      "edu2.h4": "Ingeniero Civil Industrial",
+      "edu2.span": "Universidad San Sebastián, Concepción",
+      "edu3.h4": "Docencia — Módulo de datos satelitales / teledetección",
+      "edu3.span": "Magíster en Agro 4.0 (España)",
+      "cert.h4": "Certificaciones",
+      "cert.1": "Certified Kubernetes",
+      "cert.2": "TensorFlow Developer Certificate — Google",
+      "cert.3": "Nacionalidad chilena e italiana (UE)",
+
+      "stack.label": "Herramientas",
+      "stack.h2": "Stack técnico",
+      "sg1.h4": "Lenguajes",
+      "sg2.h4": "GenAI &amp; Agentic",
+      "sg3.h4": "ML &amp; Computer Vision",
+      "sg4.h4": "MLOps &amp; Data",
+      "sg5.h4": "Cloud",
+      "sg6.h4": "Datos &amp; Arquitectura",
+
+      "contact.h2": "Conversemos",
+      "contact.p": "Abierto a oportunidades y colaboraciones en GenAI e IA agéntica, ML, visión por computador e IA física.",
+      "contact.write": "Escríbeme",
+
+      "footer": "© 2026 Marcelo García C. · AI Architect &amp; Engineer · Physical AI · Hecho con HTML estático"
+    }
+  };
+
+  const META = {
+    en: {
+      title: "Marcelo García C. — AI Architect & Engineer · Physical AI",
+      description: "AI Architect & Engineer. GenAI and agentic systems (RAG, multi-agent, MCP), Machine Learning, Computer Vision and MLOps in production. CTO of ITMeet, doctoral research in agentic AI for Agro 5.0."
+    },
+    es: {
+      title: "Marcelo García C. — AI Architect & Engineer · Physical AI",
+      description: "AI Architect & Engineer. Sistemas GenAI y agénticos (RAG, multiagente, MCP), Machine Learning, Computer Vision y MLOps en producción. CTO de ITMeet, investigación doctoral en IA agéntica para Agro 5.0."
+    }
+  };
+
+  // Capture the original English HTML from the DOM so EN needs no dictionary.
+  const EN = {};
+  document.querySelectorAll("[data-i18n]").forEach(function(el){
+    EN[el.getAttribute("data-i18n")] = el.innerHTML;
+  });
+
+  function applyLang(lang){
+    const dict = lang === "es" ? I18N.es : EN;
+    document.querySelectorAll("[data-i18n]").forEach(function(el){
+      const key = el.getAttribute("data-i18n");
+      const val = lang === "es" ? (I18N.es[key] !== undefined ? I18N.es[key] : EN[key]) : EN[key];
+      if (val !== undefined) el.innerHTML = val;
+    });
+    document.documentElement.lang = lang;
+    const meta = META[lang] || META.en;
+    document.title = meta.title;
+    const md = document.querySelector('meta[name="description"]');
+    if (md) md.setAttribute("content", meta.description);
+    document.querySelectorAll("#langToggle [data-lang]").forEach(function(s){
+      s.classList.toggle("active", s.getAttribute("data-lang") === lang);
+    });
+    try { localStorage.setItem("lang", lang); } catch(e){}
+  }
+
+  let saved = "en";
+  try { saved = localStorage.getItem("lang") || "en"; } catch(e){}
+  applyLang(saved === "es" ? "es" : "en");
+
+  document.getElementById("langToggle").addEventListener("click", function(){
+    const next = document.documentElement.lang === "es" ? "en" : "es";
+    applyLang(next);
+  });
+</script>
 
 </body>
 </html>
