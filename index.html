@@ -266,7 +266,7 @@
 <section id="projects"><div class="wrap">
   <div class="sec-label" data-i18n="projects.label">Projects with code</div>
   <h2 data-i18n="projects.h2">Selected public work</h2>
-  <p class="lead-note" data-i18n="projects.note">Personal and academic projects, open source — no client data or proprietary business logic.</p>
+  <p class="lead-note" data-i18n="projects.note">Personal and academic projects, open source, built with public datasets.</p>
   <div class="grid">
 
     <article class="card">
@@ -274,8 +274,8 @@
       <h3>Hand Pose CNN</h3>
       <div class="row" data-i18n="card1.problem"><b>Problem:</b> estimate the pose and joints of a hand from images.</div>
       <div class="row" data-i18n="card1.approach"><b>Approach:</b> landmarks with MediaPipe + CNN with real transfer learning (pretrained VGG19), 2D/3D.</div>
-      <div class="row" data-i18n="card1.result"><b>Result:</b> full pipeline from raw data to evaluated model — perception foundation for physical AI.</div>
-      <div class="stack"><span>TensorFlow</span><span>MediaPipe</span><span>VGG19</span><span>OpenCV</span></div>
+      <div class="row" data-i18n="card1.result"><b>Result:</b> full pipeline from raw data to evaluated model, with an interactive demo (image → skeleton overlay).</div>
+      <div class="stack"><span>TensorFlow</span><span>MediaPipe</span><span>VGG19</span><span>OpenCV</span><span>Gradio</span></div>
       <div class="links"><a href="https://github.com/MarceloGarcia92/hand-pose-cnn" target="_blank" rel="noopener" data-i18n="link.code">View code →</a></div>
     </article>
 
@@ -284,8 +284,8 @@
       <h3>Pleural Effusion CNN</h3>
       <div class="row" data-i18n="card2.problem"><b>Problem:</b> detect pleural fluid in DICOM chest studies.</div>
       <div class="row" data-i18n="card2.approach"><b>Approach:</b> transfer learning (DenseNet121, ResNet50V2, InceptionV3) with patient-level split (no data leakage).</div>
-      <div class="row" data-i18n="card2.result"><b>Result:</b> classification evaluated with accuracy, precision, recall, ROC-AUC and confusion matrix.</div>
-      <div class="stack"><span>Keras</span><span>DenseNet</span><span>pydicom</span><span>Transfer Learning</span></div>
+      <div class="row" data-i18n="card2.result"><b>Result:</b> evaluated with ROC-AUC and confusion matrix, served as a deployable FastAPI API (Docker/K8s, MLflow).</div>
+      <div class="stack"><span>Keras</span><span>DenseNet</span><span>pydicom</span><span>Transfer Learning</span><span>FastAPI</span></div>
       <div class="links"><a href="https://github.com/MarceloGarcia92/pleural-effusion-cnn" target="_blank" rel="noopener" data-i18n="link.code">View code →</a></div>
     </article>
 
@@ -294,8 +294,8 @@
       <h3>EO-ML Pipeline <span class="badge ip" data-i18n="card3.badge">reference</span></h3>
       <div class="row" data-i18n="card3.problem"><b>Problem:</b> automate an end-to-end ML cycle for Earth observation / AgroTech.</div>
       <div class="row" data-i18n="card3.approach"><b>Approach:</b> ingestion → preprocessing → training → evaluation → deploy, orchestrated and containerized.</div>
-      <div class="row" data-i18n="card3.result"><b>Result:</b> reproducible pipeline (EuroSAT/ResNet18) with public data — reference implementation.</div>
-      <div class="stack"><span>PyTorch</span><span>Docker</span><span>Makefile</span><span>CI/CD</span></div>
+      <div class="row" data-i18n="card3.result"><b>Result:</b> reproducible pipeline (EuroSAT/ResNet18), measured accuracy 0.85 / macro-F1 0.85, with an interactive Gradio demo.</div>
+      <div class="stack"><span>PyTorch</span><span>Docker</span><span>Makefile</span><span>CI/CD</span><span>Gradio</span></div>
       <div class="links"><a href="https://github.com/MarceloGarcia92/eo-ml-pipeline" target="_blank" rel="noopener" data-i18n="link.code">View code →</a></div>
     </article>
 
@@ -304,7 +304,7 @@
       <h3>MedBot (Rasa)</h3>
       <div class="row" data-i18n="card4.problem"><b>Problem:</b> book medical appointments through natural language in Spanish.</div>
       <div class="row" data-i18n="card4.approach"><b>Approach:</b> Rasa NLU + custom actions, persistence in PostgreSQL.</div>
-      <div class="row" data-i18n="card4.result"><b>Result:</b> deployable with Docker and Kubernetes (autoscaling, ingress, secrets).</div>
+      <div class="row" data-i18n="card4.result"><b>Result:</b> deployable with Docker/Kubernetes, with PII/PHI protection (log redaction, data minimization) and layered tests.</div>
       <div class="stack"><span>Rasa</span><span>Docker</span><span>Kubernetes</span><span>PostgreSQL</span></div>
       <div class="links"><a href="https://github.com/MarceloGarcia92/medbot-rasa" target="_blank" rel="noopener" data-i18n="link.code">View code →</a></div>
     </article>
@@ -313,9 +313,9 @@
       <div class="kicker" data-i18n="card5.kicker">Full-stack</div>
       <h3>Meal Planner</h3>
       <div class="row" data-i18n="card5.problem"><b>Problem:</b> plan meals based on inventory and reduce waste.</div>
-      <div class="row" data-i18n="card5.approach"><b>Approach:</b> Next.js + Clerk + Supabase, with correct RLS isolation (per-user policies).</div>
+      <div class="row" data-i18n="card5.approach"><b>Approach:</b> Next.js + Apollo Client → GraphQL backend (Ariadne, hexagonal) on Postgres, with correct RLS isolation (per-user policies) and Clerk auth.</div>
       <div class="row" data-i18n="card5.result"><b>Result:</b> app with auth, row-level security and a weekly planner — end-to-end product.</div>
-      <div class="stack"><span>Next.js</span><span>Supabase</span><span>Clerk</span><span>Tailwind</span></div>
+      <div class="stack"><span>Next.js</span><span>GraphQL</span><span>PostgreSQL</span><span>Clerk</span><span>Tailwind</span></div>
       <div class="links"><a href="https://github.com/MarceloGarcia92/meal-planner" target="_blank" rel="noopener" data-i18n="link.code">View code →</a></div>
     </article>
 
@@ -521,29 +521,29 @@
 
       "projects.label": "Proyectos con código",
       "projects.h2": "Trabajo público seleccionado",
-      "projects.note": "Proyectos personales y académicos, con código abierto — sin datos de clientes ni lógica de negocio propietaria.",
+      "projects.note": "Proyectos personales y académicos, de código abierto, construidos con datasets públicos.",
       "link.code": "Ver código →",
       "link.github": "Ver GitHub →",
       "card1.kicker": "Computer Vision",
       "card1.problem": "<b>Problema:</b> estimar la pose y articulaciones de una mano a partir de imágenes.",
       "card1.approach": "<b>Enfoque:</b> landmarks con MediaPipe + CNN con transfer learning real (VGG19 preentrenada), 2D/3D.",
-      "card1.result": "<b>Resultado:</b> pipeline completo de dato crudo a modelo evaluado — base de percepción para IA física.",
+      "card1.result": "<b>Resultado:</b> pipeline completo de dato crudo a modelo evaluado, con demo interactiva (imagen → esqueleto).",
       "card2.kicker": "Imagen médica",
       "card2.problem": "<b>Problema:</b> detectar fluido pleural en estudios de tórax DICOM.",
       "card2.approach": "<b>Enfoque:</b> transfer learning (DenseNet121, ResNet50V2, InceptionV3) con split a nivel de paciente (sin fuga de datos).",
-      "card2.result": "<b>Resultado:</b> clasificación evaluada con accuracy, precision, recall, ROC-AUC y matriz de confusión.",
+      "card2.result": "<b>Resultado:</b> evaluada con ROC-AUC y matriz de confusión, servida como API FastAPI desplegable (Docker/K8s, MLflow).",
       "card3.kicker": "MLOps",
       "card3.badge": "referencia",
       "card3.problem": "<b>Problema:</b> automatizar un ciclo de ML de punta a punta para observación de la Tierra / AgroTech.",
       "card3.approach": "<b>Enfoque:</b> ingesta → preprocesamiento → entrenamiento → evaluación → deploy, orquestado y contenerizado.",
-      "card3.result": "<b>Resultado:</b> pipeline reproducible (EuroSAT/ResNet18) con datos públicos — implementación de referencia.",
+      "card3.result": "<b>Resultado:</b> pipeline reproducible (EuroSAT/ResNet18), accuracy 0.85 / macro-F1 0.85 medidos, con demo interactiva Gradio.",
       "card4.kicker": "IA conversacional",
       "card4.problem": "<b>Problema:</b> agendar citas médicas por lenguaje natural en español.",
       "card4.approach": "<b>Enfoque:</b> Rasa NLU + custom actions, persistencia en PostgreSQL.",
-      "card4.result": "<b>Resultado:</b> desplegable con Docker y Kubernetes (autoscaling, ingress, secrets).",
+      "card4.result": "<b>Resultado:</b> desplegable con Docker/Kubernetes, con protección de PII/PHI (redacción en logs, minimización) y pruebas por capas.",
       "card5.kicker": "Full-stack",
       "card5.problem": "<b>Problema:</b> planificar comidas según inventario y reducir desperdicio.",
-      "card5.approach": "<b>Enfoque:</b> Next.js + Clerk + Supabase, con aislamiento por RLS correcto (políticas por usuario).",
+      "card5.approach": "<b>Enfoque:</b> Next.js + Apollo Client → backend GraphQL (Ariadne, hexagonal) sobre Postgres, con aislamiento RLS correcto (políticas por usuario) y auth con Clerk.",
       "card5.result": "<b>Resultado:</b> app con auth, seguridad a nivel de fila y planificador semanal — producto end-to-end.",
       "card6.kicker": "Más en GitHub",
       "card6.h3": "Repositorios adicionales",
