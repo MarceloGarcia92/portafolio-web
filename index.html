@@ -301,12 +301,12 @@
 
     <article class="card">
       <div class="kicker" data-i18n="card4.kicker">Conversational AI</div>
-      <h3>MedBot (Rasa)</h3>
-      <div class="row" data-i18n="card4.problem"><b>Problem:</b> book medical appointments through natural language in Spanish.</div>
-      <div class="row" data-i18n="card4.approach"><b>Approach:</b> Rasa NLU + custom actions, persistence in PostgreSQL.</div>
-      <div class="row" data-i18n="card4.result"><b>Result:</b> deployable with Docker/Kubernetes, with PII/PHI protection (log redaction, data minimization) and layered tests.</div>
-      <div class="stack"><span>Rasa</span><span>Docker</span><span>Kubernetes</span><span>PostgreSQL</span></div>
-      <div class="links"><a href="https://github.com/MarceloGarcia92/medbot-rasa" target="_blank" rel="noopener" data-i18n="link.code">View code →</a></div>
+      <h3>MedBot <span class="badge ip" data-i18n="card4.badge">NLU → LLM</span></h3>
+      <div class="row" data-i18n="card4.problem"><b>Problem:</b> book, query and cancel medical appointments through natural language in Spanish.</div>
+      <div class="row" data-i18n="card4.approach"><b>Approach:</b> the same domain solved twice — a classic <b>Rasa NLU</b> bot (trained intents + custom actions on PostgreSQL) reimagined as an <b>LLM agent</b> with typed tool-calling, RAG with source citation and clinical-safety guardrails.</div>
+      <div class="row" data-i18n="card4.result"><b>Result:</b> both deployable with Docker, sharing PII/PHI protection (log redaction) and per-patient isolation. The GenAI version is provider-agnostic (runs offline on Ollama, no API keys), with Pydantic structured outputs and an evals scorecard gating CI.</div>
+      <div class="stack"><span>Rasa</span><span>PydanticAI</span><span>RAG</span><span>Ollama</span><span>FastAPI</span><span>Docker</span></div>
+      <div class="links"><a href="https://github.com/MarceloGarcia92/medbot-rasa" target="_blank" rel="noopener" data-i18n="link.code.rasa">Rasa code (NLU) →</a><a href="https://github.com/MarceloGarcia92/medbot-llm" target="_blank" rel="noopener" data-i18n="link.code.llm">LLM agent code →</a></div>
     </article>
 
     <article class="card">
@@ -523,6 +523,8 @@
       "projects.h2": "Trabajo público seleccionado",
       "projects.note": "Proyectos personales y académicos, de código abierto, construidos con datasets públicos.",
       "link.code": "Ver código →",
+      "link.code.rasa": "Rasa (NLU) →",
+      "link.code.llm": "Agente LLM →",
       "link.github": "Ver GitHub →",
       "card1.kicker": "Computer Vision",
       "card1.problem": "<b>Problema:</b> estimar la pose y articulaciones de una mano a partir de imágenes.",
@@ -538,9 +540,10 @@
       "card3.approach": "<b>Enfoque:</b> ingesta → preprocesamiento → entrenamiento → evaluación → deploy, orquestado y contenerizado.",
       "card3.result": "<b>Resultado:</b> pipeline reproducible (EuroSAT/ResNet18), accuracy 0.85 / macro-F1 0.85 medidos, con demo interactiva Gradio.",
       "card4.kicker": "IA conversacional",
-      "card4.problem": "<b>Problema:</b> agendar citas médicas por lenguaje natural en español.",
-      "card4.approach": "<b>Enfoque:</b> Rasa NLU + custom actions, persistencia en PostgreSQL.",
-      "card4.result": "<b>Resultado:</b> desplegable con Docker/Kubernetes, con protección de PII/PHI (redacción en logs, minimización) y pruebas por capas.",
+      "card4.badge": "NLU → LLM",
+      "card4.problem": "<b>Problema:</b> agendar, consultar y cancelar citas médicas por lenguaje natural en español.",
+      "card4.approach": "<b>Enfoque:</b> el mismo dominio resuelto dos veces — un bot clásico <b>Rasa NLU</b> (intenciones entrenadas + custom actions sobre PostgreSQL) reimaginado como <b>agente LLM</b> con tool-calling tipado, RAG con citación de fuentes y guardrails de seguridad clínica.",
+      "card4.result": "<b>Resultado:</b> ambos desplegables con Docker, compartiendo protección de PII/PHI (redacción en logs) y aislamiento por paciente. La versión GenAI es provider-agnóstica (corre offline con Ollama, sin API keys), con salidas estructuradas Pydantic y un scorecard de evals que gobierna el CI.",
       "card5.kicker": "Full-stack",
       "card5.problem": "<b>Problema:</b> planificar comidas según inventario y reducir desperdicio.",
       "card5.approach": "<b>Enfoque:</b> Next.js + Apollo Client → backend GraphQL (Ariadne, hexagonal) sobre Postgres, con aislamiento RLS correcto (políticas por usuario) y auth con Clerk.",
